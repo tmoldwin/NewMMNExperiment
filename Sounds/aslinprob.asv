@@ -1,0 +1,28 @@
+x =
+
+    0.3660
+
+
+y =
+
+    0.1340
+    
+a = ones(1,450);
+b = ones(1, 450) * 2;
+c = ones(1, 900) * 3;
+d = ones (1, 900) * 4;
+
+all = [a b c d];
+for n = 1:length(all)
+    num = all(n)
+    r = ceil(length(all).*rand());
+    all(n) = all(r);
+    all(r) = num;
+end
+
+count11 = findstr([1 2], all);
+size(count11)
+count34 = findstr([3 4], all);
+size(count34)
+count1 = findstr([1], all);
+size(count1)

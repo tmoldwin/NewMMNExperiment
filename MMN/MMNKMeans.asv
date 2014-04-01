@@ -1,0 +1,21 @@
+X = load('MMNALL.dat');
+K = 2;
+idxs= [];
+for n = 1:5
+    idx = kmeans(X,K);
+    idxs = [idxs idx]
+end
+
+rowCnt = size(idxs, 1)
+columnCnt = size(idxs,2)
+matches = zeros(columnCnt, columnCnt); 
+for i = 1:columnCnt
+    for j = i:columnCnt
+        for k = 1:rowCnt
+            if idxs(k, i) == idxs(k,j)
+                matches(i,j) = matches(i,j) + 1;
+            end
+        end
+    end
+end
+matche

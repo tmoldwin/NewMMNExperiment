@@ -1,0 +1,75 @@
+
+% T1
+% D
+% 1174.66 Hz
+% T2
+% A
+% 880.0 Hz
+% T3
+% B
+% 987.767Hz
+% T4
+% F
+% 1396.91 Hz
+% T5
+% F#
+% 1479.98 Hz
+% T6
+% C
+% 1046.50 Hz
+% T7
+% E
+% 1318.51 Hz.
+
+
+dev1 = 880.0;
+dev2 = 1479.98;
+dev3 = 1318.51;
+
+p1 = [1174.66, 880.0, 987.767];
+p2 = [1396.91,  1479.98, 1046.50];
+
+%%Standard Patterns Example
+pattern = p1
+y=sin(pattern(1)*2*pi*t);
+sound(y,10000);
+
+y=sin(pattern(2)*2*pi*t);
+sound(y,10000);
+
+y=sin(pattern(3)*2*pi*t);
+sound(y,10000);
+%%End of standard pattern example
+
+dev = dev1; % Change the deviant for each condition
+for n = 1:500
+    if(rand()<=0.5)
+        pattern = p1;
+    else
+        pattern = p2;
+    end
+    t=linspace(0,4,2500);
+    y=sin(pattern(1)*2*pi*t);
+    sound(y);
+
+    t=linspace(0,4,2500);
+    y=sin(pattern(2)*2*pi*t);
+    sound(y);
+
+    if (rand()<0.1)
+        tone3 = dev
+    else
+        tone3 = pattern(3);
+    end
+    t=linspace(0,4,2500);
+    y=sin(tone3*2*pi*t);
+    sound(y);
+
+    if (rand()<0.1)
+        t=linspace(0,4,2500);
+        y=sin(dev*2*pi*t);
+        sound(y);
+    end
+
+end
+

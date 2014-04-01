@@ -1,0 +1,31 @@
+% p1 = 'tudaroe';
+% p2 = 'pigola';
+% d1 = 'tudava';
+% d2 = 'piguva';
+% ibd = 'va';
+
+p1 = 'pabiku'
+p2 = 'tibudoe'
+d1 = 'pabitee'
+d2 = 'tibutee'
+d3 = 'pabikutee'
+d4 = 'tibudoetee'
+
+
+s = '';
+stimvec = []
+prevstand = 0;
+for n = 1:1000
+    r =  rand()
+    if r < 0.4 || prevstand <=2 && r < 0.5
+        s = strcat(s,p1);
+    elseif r < 0.8 (prevstand <=2 && r < 0.5
+        s = strcat(s,p2);
+    elseif r < 0.86
+        s = strcat(s,d1);
+    elseif r < 0.92
+        s = strcat(s,d2)
+    elseif r < 1
+        s = strcat(s,ibd)
+    end
+end

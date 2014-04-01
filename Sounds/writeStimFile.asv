@@ -1,0 +1,13 @@
+function [ output_args ] = writeStimFile( stimVector, codeVector, file )
+    
+num2str(fileName')
+num2str(codeVector')
+file = 'pivotExperiment.txt';
+fid = fopen(file,'w');%# Open the file
+if fid ~= -1
+    matrix = [type; fileName]';
+    dlmwrite(file, matrix, '-append',...  %# Print the matrix
+        'delimiter','\t',...
+        'newline','pc');
+    fclose('all');                     %# Close the file
+end
