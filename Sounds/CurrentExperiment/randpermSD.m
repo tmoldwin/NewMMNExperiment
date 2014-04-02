@@ -1,4 +1,6 @@
-function [mat, soundVec, codeVec] = randpermSD(numStands, numDevs, stdcnts, devcnts, separation, soundMap, codeMap); %%standMatrix and dev Matrix are matrices of patterns
+function mat = randpermSD(stdcnts, devcnts, separation); %%standMatrix and dev Matrix are matrices of patterns
+numStands = length(stdcnts);
+numDevs = length(devcnts);
 mat = [];
 soundVec = [];
 codeVec = [];
@@ -21,10 +23,6 @@ for n = 1:length(mat)
         n2 = ceil(length(mat).*rand());
     end
     mat = swap(mat, n, n2);
-end
-for n = 1:length(mat)
-    soundVec = [soundVec soundMap.get(mat(n))'];
-    codeVec = [codeVec codeMap.get(mat(n))'];
 end
 end
 

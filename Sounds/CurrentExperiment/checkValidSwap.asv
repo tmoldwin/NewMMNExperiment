@@ -1,7 +1,0 @@
-
-function out1 = checkValidSwap(mat, n1, n2, numStands, separation)
-    isValid = 1;
-    if n1 > numStands
-        
-    end
-end
