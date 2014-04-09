@@ -1,12 +1,17 @@
-    p1 = [86 81	83];
-    p2 = [82 87	84];
-    p3 = [p1(1) p1(2) p1(2)];
-    p4 = [p2(1) p2(2) p2(2)];
-    p5 = [p1(1) p1(2) p1(3) p1(3)];
-    p6 = [p2(1) p2(2) p2(3) p2(3)];
-    
+P1	= [81	74	77]
+
+P2	= [79	80	83]
+
+P3	= [81	74	72]	
+
+P4	= [79	80	76]	
+
+P5	= [81	74	77	74]
+
+P6 = [79 80	83	84]
 supermat = []
 for(i = 1:8)
+
     %%sounds for diffstructure"
     soundMap = java.util.HashMap();
     soundMap.put(1,p1);
@@ -34,14 +39,13 @@ for(i = 1:8)
     codeVec = [];
     for n = 1:length(mat)
         soundVec = [soundVec soundMap.get(mat(n))'];
-        code = codeMap.get(mat(n))'
+        code = codeMap.get(mat(n))';
         if (n > 1)
             code(1) = ((codeVec(end))) * 10 + code(1);
         end            
         codeVec = [codeVec code];
     end
     midigen(soundVec, 0.25)
-    name = strcat(strcat('difStructure', num2str(i), '.txt'))
-    writeStimFile(soundVec, codeVec, name);
-    end
-
+    name = strcat(strcat('PlusOne', num2str(i), '.txt'))
+    %writeStimFile(soundVec, codeVec, name);
+end

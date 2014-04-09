@@ -6,7 +6,7 @@ function [ output_args ] = midigen( MIDI, duration )
 % 
 % Given a sampling rate of 1 kHz, the following example creates a sound vector of a given duration and tone frequency (using the LINSPACE and SIN functions):
 for n = 1:length(MIDI)
-    note = MIDI(n);
+    note = MIDI(n)
     Fs = 10000;      %# Samples per second
     toneFreq = 440*2^((note-69)/12);  %# Tone frequency, in Hertz
     nSeconds = duration;   %# Duration of the sound

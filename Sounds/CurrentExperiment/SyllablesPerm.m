@@ -35,7 +35,11 @@ for(i = 1:8)
     codeVec = [];
     for n = 1:length(mat)
         soundVec = [soundVec soundMap.get(mat(n))'];
-        codeVec = [codeVec codeMap.get(mat(n))'];
+        code = codeMap.get(mat(n))'
+        if (n > 1)
+            code(1) = ((codeVec(end))) * 10 + code(1);
+        end            
+        codeVec = [codeVec code];
     end
     %midigen(soundVec, 0.25)
     name = strcat(strcat('Syllables', num2str(i), '.txt'))

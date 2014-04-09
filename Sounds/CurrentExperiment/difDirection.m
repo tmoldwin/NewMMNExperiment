@@ -1,10 +1,11 @@
-    p1 = [86 81	83];
-    p2 = [82 87	84];
-    p3 = [p1(1) p1(2) p1(2)];
-    p4 = [p2(1) p2(2) p2(2)];
-    p5 = [p1(1) p1(2) p1(3) p1(3)];
-    p6 = [p2(1) p2(2) p2(3) p2(3)];
-    
+p1	= [81	74	77];
+p2	= [79	80	83];
+p3	= [81	74	72];	
+p4	= [79	80	78];
+p5	= [81	74	77	75];
+p6	= [79	80	83	85];
+
+
 supermat = []
 for(i = 1:8)
     %%sounds for diffstructure"
@@ -41,7 +42,7 @@ for(i = 1:8)
         codeVec = [codeVec code];
     end
     midigen(soundVec, 0.25)
-    name = strcat(strcat('difStructure', num2str(i), '.txt'))
-    writeStimFile(soundVec, codeVec, name);
+    name = strcat(strcat('difDirection', num2str(i), '.txt'))
+    %writeStimFile(soundVec, codeVec, name);
     end
-
+    
