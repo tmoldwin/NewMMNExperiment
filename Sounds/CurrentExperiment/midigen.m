@@ -15,7 +15,7 @@ for n = 1:length(MIDI)
     % a 50 Hz tone for 2 seconds:
     sound(y, Fs);  %# Play sound at sampling rate Fs
 
-    nSecondsSilence = 0.01;
+    nSecondsSilence = 0.1;
     silence = sin(linspace(0, 0 , nSecondsSilence * Fs));
     sound(silence, Fs);
 end

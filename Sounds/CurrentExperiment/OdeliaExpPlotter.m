@@ -70,4 +70,4 @@ set(gca, 'YTick', min(y)-1:max(y)+3);
 ylabel('Pitch (MIDI)');
 title('Patterns with Roving IB');
 
-legend('standard pattern', 'IB', 'deviant', 'Location', 'SouthEastOutside')
+legend('standard pattern', 'IB', 'deviant', 'Location', 'SouthEast')
