@@ -5,9 +5,7 @@
     p5 = [p1(1) p1(2) p1(3) p1(3)];
     p6 = [p2(1) p2(2) p2(3) p2(3)];
     
-supermat = []
-for(i = 1:8)
-    %%sounds for diffstructure"
+       %%sounds for diffstructure"
     soundMap = java.util.HashMap();
     soundMap.put(1,p1);
     soundMap.put(2,p2);
@@ -29,6 +27,9 @@ for(i = 1:8)
     codeMap.put(4,code4);
     codeMap.put(5,code5);
     codeMap.put(6,code6);
+    
+supermat = []
+for(i = 1:8)
     mat = randpermSD([150, 150], [27, 27, 22, 22], 2);
     soundVec = [];
     codeVec = [];
